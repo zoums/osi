@@ -1,0 +1,1258 @@
+
+<!DOCTYPE HTML>
+<html lang="zh" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>GPIO · OSI WiKi</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        
+        
+        
+    
+    <link rel="stylesheet" href="../../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-disqus/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-prism/prism.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-splitter/splitter.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-theme-api/theme-api.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="gpio/h5.html" />
+    
+    
+    <link rel="prev" href="chao-pin-ff08-wei-xian.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="輸入並搜尋" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        <li class="header">OSI-Wiki & Book</li>
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../../">
+            
+                <a href="../../">
+            
+                    
+                    OSI主页
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">OrangePi</li>
+        
+        
+    
+        <li class="chapter " data-level="2.1" data-path="../faq.html">
+            
+                <a href="../faq.html">
+            
+                    
+                    问题收集（FAQ）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2" data-path="../jiang-cao-zuo-xi-tong-xie-ru-tf-qia.html">
+            
+                <a href="../jiang-cao-zuo-xi-tong-xie-ru-tf-qia.html">
+            
+                    
+                    烧写操作系统
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.2.1" data-path="../jiang-cao-zuo-xi-tong-xie-ru-tf-qia/jiang-cao-zuo-xi-tong-xie-ru-tf-qia.html">
+            
+                <a href="../jiang-cao-zuo-xi-tong-xie-ru-tf-qia/jiang-cao-zuo-xi-tong-xie-ru-tf-qia.html">
+            
+                    
+                    将操作系统写入TF卡H3/H5/A64/RDA
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2.2" data-path="../jiang-cao-zuo-xi-tong-xie-ru-tf-qia/shao-xie-xi-tong-dao-emmc.html">
+            
+                <a href="../jiang-cao-zuo-xi-tong-xie-ru-tf-qia/shao-xie-xi-tong-dao-emmc.html">
+            
+                    
+                    烧写系统到EMMC
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2.3" data-path="../jiang-cao-zuo-xi-tong-xie-ru-tf-qia/orangepi2g-iotsheng-ji-nand-zhong-de-android.html">
+            
+                <a href="../jiang-cao-zuo-xi-tong-xie-ru-tf-qia/orangepi2g-iotsheng-ji-nand-zhong-de-android.html">
+            
+                    
+                    OrangePi_2G-IOT升级NAND中的Android
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2.4" data-path="../jiang-cao-zuo-xi-tong-xie-ru-tf-qia/kuo-zhan-fen-qu-da-xiao.html">
+            
+                <a href="../jiang-cao-zuo-xi-tong-xie-ru-tf-qia/kuo-zhan-fen-qu-da-xiao.html">
+            
+                    
+                    扩展分区大小
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="2.3" data-path="../kai-shi-ru-keng.html">
+            
+                <a href="../kai-shi-ru-keng.html">
+            
+                    
+                    开始入坑
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.3.1" data-path="yong-ssh-lian-jie-ban-zi-jin-xing-kong-zhi.html">
+            
+                <a href="yong-ssh-lian-jie-ban-zi-jin-xing-kong-zhi.html">
+            
+                    
+                    用SSH连接板子进行控制
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.3.2" data-path="tong-guo-chuan-kou-diao-shi-yu-kong-zhi-ban-zi.html">
+            
+                <a href="tong-guo-chuan-kou-diao-shi-yu-kong-zhi-ban-zi.html">
+            
+                    
+                    通过串口调试与控制板子
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.3.3" data-path="yuan-cheng-zhuo-mian-an-zhuang.html">
+            
+                <a href="yuan-cheng-zhuo-mian-an-zhuang.html">
+            
+                    
+                    远程桌面安装
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.3.4" data-path="tightvncserverti-shi-zhao-bu-dao-zi-ti.html">
+            
+                <a href="tightvncserverti-shi-zhao-bu-dao-zi-ti.html">
+            
+                    
+                    tightvncserver提示找不到字体
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.3.5" data-path="vnc.html">
+            
+                <a href="vnc.html">
+            
+                    
+                    设置 tight VNC Server 为开机启动￼
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.3.6" data-path="powerkey.html">
+            
+                <a href="powerkey.html">
+            
+                    
+                    香橙派关机键设置{Linux(H3)}
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.3.7" data-path="ubuntu-portguo-nei-yuan.html">
+            
+                <a href="ubuntu-portguo-nei-yuan.html">
+            
+                    
+                    ubuntu-port国内源
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.3.8" data-path="cvbsyin-pin-shu-chu.html">
+            
+                <a href="cvbsyin-pin-shu-chu.html">
+            
+                    
+                    cvbs音频输出
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.3.9" data-path="xiu-gai-xian-shi-fen-bian-lv.html">
+            
+                <a href="xiu-gai-xian-shi-fen-bian-lv.html">
+            
+                    
+                    修改显示分辨率
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.3.10" data-path="xi-tong-jie-mian-han-hua-he-an-zhuang-zhong-wen-yu-yan.html">
+            
+                <a href="xi-tong-jie-mian-han-hua-he-an-zhuang-zhong-wen-yu-yan.html">
+            
+                    
+                    系统界面汉化和安装中文语言
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.3.11" data-path="chromiumliu-lan-qi-tian-jia-flash-cha-jian.html">
+            
+                <a href="chromiumliu-lan-qi-tian-jia-flash-cha-jian.html">
+            
+                    
+                    Chromium浏览器添加Flash插件
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.3.12" data-path="armbianxiu-gai-shi-jian-he-shi-qu.html">
+            
+                <a href="armbianxiu-gai-shi-jian-he-shi-qu.html">
+            
+                    
+                    Armbian修改时间和时区
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="2.4" data-path="jin-jie.html">
+            
+                <a href="jin-jie.html">
+            
+                    
+                    进阶
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.4.1" data-path="dtcgong-ju-zhuan-huan-dts-yu-dtb.html">
+            
+                <a href="dtcgong-ju-zhuan-huan-dts-yu-dtb.html">
+            
+                    
+                    dtc工具转换dts与dtb
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.4.2" data-path="scriptbinde-pei-zhi-yu-zhuan-huan.html">
+            
+                <a href="scriptbinde-pei-zhi-yu-zhuan-huan.html">
+            
+                    
+                    script.bin的配置与转换
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.4.3" data-path="hdmizhuan-dvi-zhi-chi.html">
+            
+                <a href="hdmizhuan-dvi-zhi-chi.html">
+            
+                    
+                    微雪屏显示与HDMI转DVI支持
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.4.4" data-path="linuxxia-3-5mm-kou-tv-shu-chu-zhi-chi.html">
+            
+                <a href="linuxxia-3-5mm-kou-tv-shu-chu-zhi-chi.html">
+            
+                    
+                    Linux下3.5mm口tv输出支持
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.4.5" data-path="jin-jie/h3de-mainline-uboot-qi-dong-bsp-nei-he.html">
+            
+                <a href="jin-jie/h3de-mainline-uboot-qi-dong-bsp-nei-he.html">
+            
+                    
+                    H3的mainline uboot启动bsp内核
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.4.6" data-path="xiu-gai-otg-kou-mo-shi-wei-device-ff08-zhu-yao-shi-an-zhuo-ff09.html">
+            
+                <a href="xiu-gai-otg-kou-mo-shi-wei-device-ff08-zhu-yao-shi-an-zhuo-ff09.html">
+            
+                    
+                    修改OTG口模式为device（主要是安卓）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.4.7" data-path="otgkou-zai-linux-de-shi-752828-h3.html">
+            
+                <a href="otgkou-zai-linux-de-shi-752828-h3.html">
+            
+                    
+                    OTG口在Linux的使用(H3)
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.4.8" data-path="orange-pishi-yong-1-wire-wen-du-chuan-gan-qi-ds18b20.html">
+            
+                <a href="orange-pishi-yong-1-wire-wen-du-chuan-gan-qi-ds18b20.html">
+            
+                    
+                    OrangePi使用1-Wire温度传感器DS18B20
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.4.9" data-path="orangepizuo-bian-cheng-qi.html">
+            
+                <a href="orangepizuo-bian-cheng-qi.html">
+            
+                    
+                    OrangePi做编程器
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.4.10" data-path="gei-an-zhuo-tian-jia-hong-wai-yao-kong.html">
+            
+                <a href="gei-an-zhuo-tian-jia-hong-wai-yao-kong.html">
+            
+                    
+                    给安卓添加红外遥控
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.4.11" data-path="pc2de-c-yu-yan-dian-liang-led-cheng-xu.html">
+            
+                <a href="pc2de-c-yu-yan-dian-liang-led-cheng-xu.html">
+            
+                    
+                    PC2的C语言点亮LED程序
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.4.12" data-path="opishi-fen-zhong-hei-ping-jie-jue-fang-fa.html">
+            
+                <a href="opishi-fen-zhong-hei-ping-jie-jue-fang-fa.html">
+            
+                    
+                    OPI十分钟黑屏解决方法
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.4.13" data-path="orangepian-zhuo-root.html">
+            
+                <a href="orangepian-zhuo-root.html">
+            
+                    
+                    OrangePi安卓root
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.4.14" data-path="chao-pin-ff08-wei-xian.html">
+            
+                <a href="chao-pin-ff08-wei-xian.html">
+            
+                    
+                    超频（危险！！！！）
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter active" data-level="2.5" data-path="gpio.html">
+            
+                <a href="gpio.html">
+            
+                    
+                    GPIO
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.5.1" data-path="gpio/h5.html">
+            
+                <a href="gpio/h5.html">
+            
+                    
+                    H5
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.5.1.1" data-path="gpio/h5/wiringop.html">
+            
+                <a href="gpio/h5/wiringop.html">
+            
+                    
+                    WiringOP
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="2.5.2" data-path="gpio/h3h2+.html">
+            
+                <a href="gpio/h3h2+.html">
+            
+                    
+                    H3/H2+
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.5.2.1" data-path="gpio/h3h2+/wiringoph3.html">
+            
+                <a href="gpio/h3h2+/wiringoph3.html">
+            
+                    
+                    WiringOP(H3)
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.5.2.2" data-path="gpio/h3h2+/opigpiopython.html">
+            
+                <a href="gpio/h3h2+/opigpiopython.html">
+            
+                    
+                    GPIO-Python
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.5.2.3" data-path="gpio/h3h2+/serialpython.html">
+            
+                <a href="gpio/h3h2+/serialpython.html">
+            
+                    
+                    Serial(Python)
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="2.5.3" data-path="gpio/a64.html">
+            
+                <a href="gpio/a64.html">
+            
+                    
+                    A64
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.5.4" data-path="gpio/rda8810pl.html">
+            
+                <a href="gpio/rda8810pl.html">
+            
+                    
+                    RDA8810PL
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.5.4.1" data-path="gpio/rda8810pl/wiringpi.html">
+            
+                <a href="gpio/rda8810pl/wiringpi.html">
+            
+                    
+                    WiringPi
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="2.6" data-path="../wan-jia.html">
+            
+                <a href="../wan-jia.html">
+            
+                    
+                    玩家
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.6.1" data-path="../wan-jia/orangepi-lite-xi-lie-2-shi-yong-us-015-chao-sheng-bo-mo-kuai-ce-ju.html">
+            
+                <a href="../wan-jia/orangepi-lite-xi-lie-2-shi-yong-us-015-chao-sheng-bo-mo-kuai-ce-ju.html">
+            
+                    
+                    使用US-015超声波模块测距
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.6.2" data-path="../wan-jia/orangepizeromfrc522.html">
+            
+                <a href="../wan-jia/orangepizeromfrc522.html">
+            
+                    
+                    OrangePiZeroMFRC522
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.6.3" data-path="../wan-jia/orangepiwang-xian-zhi-lian-dian-nao-ff08-windows.html">
+            
+                <a href="../wan-jia/orangepiwang-xian-zhi-lian-dian-nao-ff08-windows.html">
+            
+                    
+                    OrangePi网线直连电脑（windows）
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="2.7" data-path="orangepizero.html">
+            
+                <a href="orangepizero.html">
+            
+                    
+                    OrangePi Zero
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.7.1" data-path="jie-kou-ding-yi.html">
+            
+                <a href="jie-kou-ding-yi.html">
+            
+                    
+                    接口定义
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.7.2" data-path="orangepizero/zeroshi-yong-poe-gong-dian.html">
+            
+                <a href="orangepizero/zeroshi-yong-poe-gong-dian.html">
+            
+                    
+                    Zero使用POE供电
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="2.8" data-path="../orangepi-onelite.html">
+            
+                <a href="../orangepi-onelite.html">
+            
+                    
+                    OrangePi One/Lite
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.8.1" data-path="../orangepi-onelite/jie-kou-ding-yi.html">
+            
+                <a href="../orangepi-onelite/jie-kou-ding-yi.html">
+            
+                    
+                    接口定义
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.8.2" data-path="../orangepi-onelite/orangepi-onetian-jia-usb-ir-mic-tv.html">
+            
+                <a href="../orangepi-onelite/orangepi-onetian-jia-usb-ir-mic-tv.html">
+            
+                    
+                    OrangePi One添加usb-ir-mic-tv-lineout
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.8.3" data-path="../orangepi-onelite/orangepi-litetian-jia-usb-mic-tv.html">
+            
+                <a href="../orangepi-onelite/orangepi-litetian-jia-usb-mic-tv.html">
+            
+                    
+                    OrangePi Lite添加usb-mic-tv-lineout
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="2.9" data-path="../fu-lu-1.html">
+            
+                <a href="../fu-lu-1.html">
+            
+                    
+                    附录1（各种收集）
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.9.1" data-path="../fu-lu-1/ubuntu15yi-shang-mkfs-ext4-yu-jiu-ban-ben-bu-jian-rong-jie-jue.html">
+            
+                <a href="../fu-lu-1/ubuntu15yi-shang-mkfs-ext4-yu-jiu-ban-ben-bu-jian-rong-jie-jue.html">
+            
+                    
+                    Ubuntu15以上mkfs.ext4与旧版本不兼容解决
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.9.2" data-path="../fu-lu-1/zhizuo-initrd-zhu-yi-de.html">
+            
+                <a href="../fu-lu-1/zhizuo-initrd-zhu-yi-de.html">
+            
+                    
+                    制作initrd注意的
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.9.3" data-path="../fu-lu-1/wo-de-jing-xiang.html">
+            
+                <a href="../fu-lu-1/wo-de-jing-xiang.html">
+            
+                    
+                    我的镜像
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.9.4" data-path="../fu-lu-1/orangepi2g-iot.html">
+            
+                <a href="../fu-lu-1/orangepi2g-iot.html">
+            
+                    
+                    OrangePi_2G-IOT
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.9.5" data-path="../fu-lu-1/ru-he-shi-yong-av-er-ji-cha-kong-ting-yin-le.html">
+            
+                <a href="../fu-lu-1/ru-he-shi-yong-av-er-ji-cha-kong-ting-yin-le.html">
+            
+                    
+                    如何使用AV/耳机插孔听音乐
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="2.10" data-path="../gong-xian-lie-biao.html">
+            
+                <a href="../gong-xian-lie-biao.html">
+            
+                    
+                    贡献列表
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">Maya</li>
+        
+        
+    
+        <li class="chapter " data-level="3.1" data-path="../../maya/mayakuai-jie-jian.html">
+            
+                <a href="../../maya/mayakuai-jie-jian.html">
+            
+                    
+                    Maya快捷键及技巧
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">After Effects</li>
+        
+        
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            本書使用 GitBook 釋出
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="../.." >GPIO</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="gpio">GPIO</h1>
+<p><strong>General Purpose Input/Output</strong>(<strong>GPIO</strong>)&#x662F;&#x96C6;&#x6210;&#x7535;&#x8DEF;&#x4E0A;&#x7684;&#x901A;&#x7528;IO&#x53E3;&#xFF0C;&#x901A;&#x8FC7;&#x8FD0;&#x884C;&#x65F6;&#x7531;&#x7528;&#x6237;&#x63A7;&#x5236;&#x6216;&#x8005;&#x7F16;&#x7A0B;&#x63A7;&#x5236;&#xFF08;&#x5305;&#x62EC;&#x5B83;&#x662F;&#x5426;&#x8F93;&#x5165;&#x8F93;&#x51FA;&#xFF09;&#x3002;&#x4F5C;&#x4E3A;&#x5F00;&#x53D1;&#x677F;&#x5916;&#x63A5;&#x7684;&#x63A5;&#x53E3;&#xFF0C;&#x5F88;&#x9002;&#x5408;&#x88AB;&#x7528;&#x6237;&#x7528;&#x6765;&#x505A;&#x5404;&#x79CD;&#x5404;&#x6837;&#x5947;&#x602A;&#x7684;&#x4E8B;&#x60C5;&#xFF0C;&#x4F46;&#x662F;&#xFF0C;&#x8FDE;&#x63A5;&#x5404;&#x79CD;&#x5947;&#x602A;&#x7684;&#x4E1C;&#x897F;&#x524D;&#xFF0C;&#x8BF7;&#x6CE8;&#x610F;&#x770B;&#x63A5;&#x53E3;&#x5B9A;&#x4E49;&#x548C;&#x5185;&#x5916;&#x7535;&#x8DEF;&#xFF01;&#x635F;&#x574F;&#x4E86;&#x7684;&#x522B;&#x602A;&#x6211;&#x4E0D;&#x63D0;&#x9192;&#x3002;&#x3002;&#x3002;&#x987A;&#x4FBF;&#x8BF4;&#x53E5;&#x3002;&#x3002;&#x4F4E;&#x4EF7;&#x6536;&#x574F;PI&#x4E86;&#x5582;(/&#x6ED1;&#x7A3D;)&#x3002;</p>
+<h2 id="&#x6982;&#x8FF0;">&#x6982;&#x8FF0;</h2>
+<p>GPIO&#x5F15;&#x811A;&#x6CA1;&#x6709;&#x7279;&#x6B8A;&#x7684;&#x5B9A;&#x4E49;&#xFF0C;&#x901A;&#x5E38;&#x5728;&#x9ED8;&#x8BA4;&#x60C5;&#x51B5;&#x4E0B;&#x4E0D;&#x4F7F;&#x7528;&#x3002;&#x8FD9;&#x6837;&#x7684;&#x505A;&#x6CD5;&#x662F;&#x662F;&#xFF0C;&#x6709;&#x65F6;&#x7CFB;&#x7EDF;&#x5F00;&#x53D1;&#x5546;&#x60F3;&#x5EFA;&#x7ACB;&#x4E00;&#x4E2A;&#x5B8C;&#x6574;&#x7684;&#x7CFB;&#x7EDF;&#xFF0C;&#x4F7F;&#x7528;&#x82AF;&#x7247;&#x53EF;&#x80FD;&#x4F1A;&#x53D1;&#x73B0;&#x6709;&#x4E00;&#x4E9B;&#x989D;&#x5916;&#x7684;&#x6570;&#x5B57;&#x63A7;&#x5236;&#x7EBF;&#x8DEF;&#x662F;&#x6709;&#x7528;&#x7684;&#xFF0C;&#x6709;&#x4E9B;&#x662F;&#x6CA1;&#x7528;&#x7684;&#xFF0C;&#x800C;&#x4E14;&#x4ECE;&#x82AF;&#x7247;&#x4E2D;&#x53EF;&#x4EE5;&#x76F4;&#x63A5;&#x83B7;&#x5F97;&#x8FD9;&#x4E9B;&#x63A5;&#x53E3;&#x53EF;&#x4EE5;&#x7701;&#x53BB;&#x989D;&#x5916;&#x7684;&#x7535;&#x8DEF;&#x6765;&#x63D0;&#x4F9B;&#x5B83;&#x4EEC;&#x3002;</p>
+<p>GPIO&#x7AEF;&#x53E3;&#x662F;&#x7531;&#x4E00;&#x7EC4;GPIO&#x5F15;&#x811A;&#xFF08;&#x901A;&#x5E38;&#x6709;8&#x4E2A;PA&#x3001;PC&#x3001;PE&#x7B49;&#xFF09;&#x7EC4;&#x6210;&#xFF0C;&#x5E76;&#x4E14;&#x4F5C;&#x4E3A;&#x5355;&#x4E2A;&#x7AEF;&#x53E3;&#x8FDB;&#x884C;&#x5904;&#x7406;&#x3002;</p>
+<h1 id="&#x5728;&#x4E3B;&#x7EBF;&#x5185;&#x6838;&#x8BBF;&#x95EE;gpio&#x5F15;&#x811A;&#x901A;&#x8FC7;sysfs&#x7528;&#x6237;&#x7A7A;&#x95F4;">&#x5728;&#x4E3B;&#x7EBF;&#x5185;&#x6838;&#x8BBF;&#x95EE;GPIO&#x5F15;&#x811A;&#x901A;&#x8FC7;sysfs&#x7528;&#x6237;&#x7A7A;&#x95F4;</h1>
+<p>GPIO&#x80FD;&#x88AB;&#x6765;&#x81EA;&#x7528;&#x6237;&#x7A7A;&#x95F4;&#x7684;sysfs&#x8BBF;&#x95EE;&#x3002;&#x8981;&#x6253;&#x5F00;&#x5B83;&#x4F60;&#x9700;&#x8981;&#x6253;&#x5F00;&#x8FD9;&#x4E2A;&#x5185;&#x6838;&#x9009;&#x9879;&#xFF1A;CONFIG_GPIO_SYSFS</p>
+<p>&#x5EFA;&#x8BAE;&#x5728;&#x6B64;&#x4E4B;&#x524D;&#x68C0;&#x67E5;/sys/class/gpio&#x4E0B;&#x662F;&#x5426;&#x6709;export&#x548C;unexport&#xFF0C;&#x5982;&#x679C;&#x6709;&#xFF0C;&#x4F60;&#x4E0D;&#x7528;&#x91CD;&#x65B0;&#x7F16;&#x8BD1;&#x5185;&#x6838;&#x800C;&#x53BB;&#x4F7F;&#x7528;sysfs&#x3002;</p>
+<pre class="language-"><code>Device Drivers  ---&gt;GPIO Support  ---&gt;/sys/class/gpio/... (sysfs interface)
+</code></pre><p>&#x8981;&#x8BBF;&#x95EE;&#x4E00;&#x4E2A;GPIO&#x7BA1;&#x811A;&#x4F60;&#xFF0C;&#x4F60;&#x9996;&#x5148;&#x5F97;&#x5BFC;&#x51FA;&#x5B83;&#x7528;&#x5982;&#x4E0B;&#x547D;&#x4EE4;&#xFF1A;</p>
+<pre class="language-"><code>echo XX &gt; /sys/class/gpio/export
+</code></pre><p>&#x4F60;&#x9700;&#x8981;&#x901A;&#x8FC7;&#x8BA1;&#x7B97;&#x83B7;&#x5F97;&#x6240;&#x9700;&#x8981;&#x7684;&#x9488;&#x811A;&#x7684;&#x6570;&#x503C;XX&#xFF0C;&#x4E0B;&#x9762;&#x4EE5;PH18&#x4E3A;&#x5B9E;&#x4F8B;&#xFF1A;</p>
+<pre class="language-"><code>(&#x7B2C;&#x4E8C;&#x4F4D;&#x5B57;&#x6BCD;&#x6309;A-Z&#x7684;&#x6392;&#x5E8F;&#x503C; - 1) * 32 + &#x9488;&#x811A;&#x6570;&#x503C;
+</code></pre><p>&#x4F8B;&#x5982; PH18 &#x662F; ( 8 - 1) * 32 + 18 = 224 + 18 = 242 (H&#x662F;&#x7B2C;&#x516B;&#x4E2A;&#x5B57;&#x6BCD;)&#x3002;</p>
+<p>&#x7B80;&#x800C;&#x8A00;&#x4E4B;&#xFF0C;&#x662F;PH18&#x7B2C;&#x4E8C;&#x4F4D;&#x5B57;&#x6BCD;H&#x7684;&#x6392;&#x5E8F;8&#x51CF;&#x53BB;1&#x4E58;&#x4EE5;32&#x518D;&#x52A0;&#x5F15;&#x811A;&#x53F7;&#x3002;</p>
+<p>&#x5728;&#x6B64;&#x4E4B;&#x540E;&#x4F60;&#x5C31;&#x80FD;&#x6210;&#x529F;&#x8BBF;&#x95EE;PH18&#x901A;&#x8FC7;<strong>/sys/class/gpio/gpio*NUMBER*</strong>(&#x5728;&#x8FD9;&#x91CC;PH18&#x662F;/sys/class/gpio/gpio242).</p>
+<p>&#x901A;&#x8FC7; /sys/class/gpio/gpio*NUMBER*/direction &#x4F60;&#x80FD;&#x8BBE;&#x7F6E;&#x7BA1;&#x811A;&#x7684;&#x8F93;&#x5165;&#x8F93;&#x51FA;&#xFF08;in/out&#xFF09;&#x3002;</p>
+<pre class="language-"><code>echo &quot;out&quot; &gt; /sys/class/gpio/gpio*NUMBER*/direction
+</code></pre><p>&#x7136;&#x540E;&#x4F60;&#x80FD;&#x901A;&#x8FC7; <strong>/sys/class/gpio/gpio*NUMBER*/value &#x8BFB;&#x5199;&#x7BA1;&#x811A;&#x3002;</strong></p>
+<p>&#x5F53;&#x4F60;&#x8981;&#x53D6;&#x6D88;&#x8BBF;&#x95EE;&#x7BA1;&#x811A;&#x65F6;&#xFF0C;&#x53EF;&#x4EE5;&#xFF1A;</p>
+<pre class="language-"><code>echo XX &gt; /sys/class/gpio/unexport
+</code></pre><p>&#x6CE8;&#xFF1A;XX&#x662F;&#x7BA1;&#x811A;&#x8BA1;&#x7B97;&#x51FA;&#x6765;&#x7684;&#x7F16;&#x53F7;&#xFF0C;&#x5177;&#x4F53;&#x770B;&#x4E0A;&#x9762;&#x8BBF;&#x95EE;&#x7BA1;&#x811A;&#x90E8;&#x5206;&#x3002;</p>
+<h1 id="&#x8BBF;&#x95EE;gpio&#x901A;&#x8FC7;sysfs&#x5728;sunxi-34310&#xFF08;&#x5168;&#x5FD7;&#x7684;bsp&#x5185;&#x6838;&#xFF09;">&#x8BBF;&#x95EE;GPIO&#x901A;&#x8FC7;sysfs&#x5728;sunxi-3.4/3.10&#xFF08;&#x5168;&#x5FD7;&#x7684;bsp&#x5185;&#x6838;&#xFF09;</h1>
+<p>&#x8FD9;&#x4E2A;&#x65B9;&#x6CD5;&#x53EF;&#x80FD;&#x968F;&#x65F6;&#x5931;&#x6548;&#xFF0C;&#x4E0D;&#x8FC7;&#x6211;&#x5728;3.4.103&#x4E0A;&#x4F9D;&#x65E7;&#x80FD;&#x7528;&#xFF0C;&#x6055;&#x4E0D;&#x53E6;&#x884C;&#x901A;&#x77E5;&#x3002;&#x5E76;&#x4E14;&#x5982;&#x679C;&#x4F60;&#x60F3;&#x7528;mainline&#x7684;&#x65B9;&#x6CD5;&#xFF0C;&#x53EF;&#x4EE5;&#x628A;&#x6A21;&#x5757;&#x53BB;&#x6389;&#xFF08;&#x53EF;&#x80FD;&#x8FD8;&#x9700;&#x8981;&#x53BB;/etc/modules&#x91CC;&#x9762;&#x53BB;&#x6389;&#xFF09;&#xFF0C;&#x5982;&#x679C;&#x6CA1;&#x6709;/sys/class/gpio&#xFF0C;&#x4F60;&#x8FD8;&#x9700;&#x8981;&#x6309;mainline&#x7684;&#x65B9;&#x6CD5;&#x53BB;&#x914D;&#x7F6E;&#x5185;&#x6838;&#x3002;</p>
+<p>&#x9996;&#x5148;&#x4F60;&#x5F97;&#x786E;&#x4FDD;script.bin&#x6709;&#x5B9A;&#x4E49;&#x4E00;&#x4E9B;&#x5F15;&#x811A;&#xFF0C;&#x5426;&#x5219;&#x5F53;&#x4F60;&#x52A0;&#x8F7D;&#x8FD9;&#x4E2A;&#x6A21;&#x5757;&#x65F6;&#x4F1A;&#x62A5;&#x9519;&#x63D0;&#x793A;&#x6CA1;&#x6709;&#x5F15;&#x811A;&#x5B9A;&#x4E49;&#x5728;script.bin&#x3002;&#x4E00;&#x4E9B;&#x7CFB;&#x7EDF;&#x7684;script.bin&#x539F;&#x672C;&#x5DF2;&#x7ECF;&#x5B9A;&#x4E49;&#x4E86;&#x4E0D;&#x5C11;GPIO&#x7BA1;&#x811A;&#xFF0C;3.10&#x4E00;&#x822C;&#x662F;&#x5168;&#x5FD7;H5&#x6216;&#x8005;A64&#xFF0C;&#x4ED6;&#x4EEC;&#x4E00;&#x822C;&#x5728;Linux&#x4E0B;&#x4F7F;&#x7528;<strong>DTB</strong>&#x800C;&#x4E0D;&#x662F;script.bin&#x3002;dtb&#x548C;script.bin&#x4FEE;&#x6539;&#x65B9;&#x6CD5;&#x5728;&#x8FDB;&#x9636;&#x90A3;&#x7AE0;&#x3002;</p>
+<p>&#x5982;&#x4E0B;&#x7ED9;&#x51FA;script.bin&#x7684;&#x76F8;&#x5173;&#x5B9A;&#x4E49;&#xFF0C;dtb&#x65E5;&#x540E;&#x518D;&#x7ED9;&#x3002;</p>
+<pre class="language-"><code> [gpio_para]
+ gpio_used= 1
+ gpio_num=12
+ gpio_pin_1= port:PE00
+ gpio_pin_2= port:PE01
+ gpio_pin_3= port:PE02
+ gpio_pin_4= port:PE03
+ gpio_pin_5= port:PE04
+ gpio_pin_6= port:PE05
+ gpio_pin_7= port:PE06
+ gpio_pin_8= port:PE07
+ gpio_pin_9= port:PE08
+ gpio_pin_10= port:PE09
+ gpio_pin_11= port:PE10
+ gpio_pin_12= port:PE11
+</code></pre><p>&#x5982;&#x679C;&#x4F60;&#x60F3;&#x5728;&#x7AEF;&#x53E3;&#x8F93;&#x5165;&#x65F6;&#x8BBE;&#x7F6E;&#x4E0A;&#x62C9;&#x6216;&#x8005;&#x4E0B;&#x62C9;&#xFF0C;&#x4F60;&#x53EF;&#x4EE5;&#x53BB;&#x9605;&#x8BFB;FEX&#x6559;&#x7A0B;&#x8FD9;&#x4E00;&#x90E8;&#x5206;<a href="http://linux-sunxi.org/Fex_Guide#Port_Definitions" target="_blank">Port Definitions</a>&#x3002;&#x4E2D;&#x6587;&#x7684;&#x5728;&#x6B64;&#x94FE;&#x63A5;: <a href="http://pan.baidu.com/s/1nvObrvz" target="_blank">http://pan.baidu.com/s/1nvObrvz</a> &#x5BC6;&#x7801;: vp32</p>
+<p>&#x7136;&#x540E;&#x4F60;&#x9700;&#x8981;&#x53BB;&#x52A0;&#x8F7D;&#x8FD9;&#x4E2A;&#x5185;&#x6838;&#x6A21;&#x5757;&#xFF1A;</p>
+<pre class="language-"><code>  modprobe gpio-sunxi
+</code></pre><p>&#x7136;&#x540E;&#x5BFC;&#x5165;&#x4F60;&#x8981;&#x7684;&#x7BA1;&#x811A;&#x3002;&#xFF08;&#x7136;&#x800C;&#xFF0C;&#x6709;&#x4E9B;&#x7248;&#x672C;&#x7684;&#x5185;&#x6838;&#x5728;&#x4E0A;&#x4E00;&#x90E8;&#x52A0;&#x8F7D;&#x6A21;&#x5757;&#x540E;&#x5728;<strong>/sys/class/gpio_sw</strong>&#x5DF2;&#x6709;&#x76F8;&#x5E94;&#x7BA1;&#x811A;&#x8BBF;&#x95EE;&#x4E86;&#xFF0C;&#x6240;&#x4EE5;&#x4E0D;&#x662F;&#x6240;&#x6709;&#x5185;&#x6838;&#x7248;&#x672C;&#x90FD;&#x9002;&#x7528;&#x3002;&#xFF09;</p>
+<pre class="language-"><code> for A in 1 2 3 4 5 6 7 8 9 10 11 12; do echo &quot;$A&quot; &gt; /sys/class/gpio/export ; done
+</code></pre><p>&#x7136;&#x540E;&#x5E94;&#x8BE5;&#x4F1A;&#x6709;&#x4E00;&#x4E9B;&#x94FE;&#x63A5;&#x5728; sys/class/gpio/&#xFF0C;&#x6216;&#x8005;&#x4E0D;&#x884C;&#x7684;&#x53EF;&#x4EE5;&#x53BB;/sys/class/gpio_sw&#xFF1A;</p>
+<pre class="language-"><code> root@headless2:/sys/class/gpio# ls -l
+ total 0
+ --w------- 1 root root 4096 Jan 10 00:12 export
+ lrwxrwxrwx 1 root root    0 Jan 10 00:12 gpio10_pe9 -&gt; ../../devices/platform/gpio-sunxi/gpio/gpio10_pe9/
+ lrwxrwxrwx 1 root root    0 Jan 10 00:12 gpio11_pe10 -&gt; ../../devices/platform/gpio-sunxi/gpio/gpio11_pe10/
+ lrwxrwxrwx 1 root root    0 Jan 10 00:12 gpio12_pe11 -&gt; ../../devices/platform/gpio-sunxi/gpio/gpio12_pe11/
+ lrwxrwxrwx 1 root root    0 Jan 10 00:11 gpio1_pe0 -&gt; ../../devices/platform/gpio-sunxi/gpio/gpio1_pe0/
+ lrwxrwxrwx 1 root root    0 Jan 10 00:12 gpio2_pe1 -&gt; ../../devices/platform/gpio-sunxi/gpio/gpio2_pe1/
+ lrwxrwxrwx 1 root root    0 Jan 10 00:12 gpio3_pe2 -&gt; ../../devices/platform/gpio-sunxi/gpio/gpio3_pe2/
+ lrwxrwxrwx 1 root root    0 Jan 10 00:12 gpio4_pe3 -&gt; ../../devices/platform/gpio-sunxi/gpio/gpio4_pe3/
+ lrwxrwxrwx 1 root root    0 Jan 10 00:12 gpio5_pe4 -&gt; ../../devices/platform/gpio-sunxi/gpio/gpio5_pe4/
+ lrwxrwxrwx 1 root root    0 Jan 10 00:12 gpio6_pe5 -&gt; ../../devices/platform/gpio-sunxi/gpio/gpio6_pe5/
+ lrwxrwxrwx 1 root root    0 Jan 10 00:12 gpio7_pe6 -&gt; ../../devices/platform/gpio-sunxi/gpio/gpio7_pe6/
+ lrwxrwxrwx 1 root root    0 Jan 10 00:12 gpio8_pe7 -&gt; ../../devices/platform/gpio-sunxi/gpio/gpio8_pe7/
+ lrwxrwxrwx 1 root root    0 Jan 10 00:12 gpio9_pe8 -&gt; ../../devices/platform/gpio-sunxi/gpio/gpio9_pe8/
+ lrwxrwxrwx 1 root root    0 Jan 10 00:10 gpiochip1 -&gt; ../../devices/platform/gpio-sunxi/gpio/gpiochip1/
+ --w------- 1 root root 4096 Jan 10 00:09 unexport
+ root@headless2:/sys/class/gpio#
+</code></pre><p>&#x8BBE;&#x7F6E;&#x9700;&#x8981;&#x7684;&#x65B9;&#x5411;direction&#xFF08;&#x6BD4;&#x5982;&#x8FD9;&#x91CC;&#x662F;out&#x8F93;&#x51FA;&#xFF09;&#xFF1A;</p>
+<pre class="language-"><code> echo out &gt; /sys/class/gpio/gpio12_pe11/direction
+</code></pre><p>&#x7136;&#x540E;&#x4F60;&#x80FD;&#x8F93;&#x51FA;&#x4E00;&#x4E9B;&#x4E1C;&#x897F;&#xFF08;&#x7BA1;&#x811A;&#x9AD8;&#x7535;&#x5E73;&#xFF0C;3.3v&#xFF09;&#xFF1A;</p>
+<pre class="language-"><code> echo 1 &gt; /sys/class/gpio/gpio12_pe11/value
+</code></pre><p>&#x4ED4;&#x7EC6;&#x9605;&#x8BFB;&#x5185;&#x6838;&#x6587;&#x6863;sysfs gpio&#x53EF;&#x4EE5;&#x83B7;&#x5F97;&#x66F4;&#x591A;&#x53EF;&#x7528;&#x7684;&#x7279;&#x5F81;&#x53CA;&#x65B9;&#x6CD5;&#x3002;<a href="https://www.kernel.org/doc/Documentation/gpio/sysfs.txt" target="_blank">Documentation/gpio/sysfs.txt</a></p>
+<h1 id="&#x53E6;&#x8BF7;&#x53C2;&#x9605;">&#x53E6;&#x8BF7;&#x53C2;&#x9605;</h1>
+<ul>
+<li><a href="http://linux-sunxi.org/JTAG" target="_blank">JTAG</a></li>
+<li><a href="http://linux-sunxi.org/MicroSD_Breakout" target="_blank">MicroSD Breakout</a></li>
+<li><a href="http://linux-sunxi.org/A10/PIO" target="_blank">A10/PIO</a></li>
+<li><a href="http://linux-sunxi.org/A13/PIO" target="_blank">A13/PIO</a></li>
+<li><a href="http://linux-sunxi.org/A20/PIO" target="_blank">A20/PIO</a></li>
+<li><a href="http://linux-sunxi.org/H3/PIO" target="_blank">H3/PIO</a></li>
+</ul>
+<h1 id="&#x53C2;&#x8003;&#x6587;&#x732E;">&#x53C2;&#x8003;&#x6587;&#x732E;</h1>
+<ol>
+<li><a href="https://github.com/torvalds/linux/blob/master/drivers/pinctrl/sunxi/pinctrl-sunxi.h#L19" target="_blank">https://github.com/torvalds/linux/blob/master/drivers/pinctrl/sunxi/pinctrl-sunxi.h#L19</a></li>
+</ol>
+<h1 id="&#x5916;&#x90E8;&#x94FE;&#x63A5;">&#x5916;&#x90E8;&#x94FE;&#x63A5;</h1>
+<ul>
+<li><a href="http://www.spinics.net/lists/alsa-devel/msg03646.html" target="_blank">ALSA Development List</a></li>
+<li><a href="https://git.kernel.org/cgit/linux/kernel/git/linusw/linux-gpio.git/tree/Documentation/gpio/gpio.txt" target="_blank">Linux Kernel Doc on GPIO</a></li>
+<li><a href="http://linuxtv.org/wiki/index.php/GPIO_pins" target="_blank">LinuxTV GPIO Pins Info</a></li>
+<li><a href="http://bir-robotic.ir/blog/2014/04/21/&#x631;&#x627;&#x647;-&#x627;&#x646;&#x62F;&#x627;&#x632;&#x6CC;-gpio-&#x628;&#x62E;&#x634;-&#x62F;&#x648;&#x645;/" target="_blank">GPIO Tutorial - &#x628;&#x6CC;&#x631; &#x631;&#x628;&#x627;&#x62A;&#x6CC;&#x6A9;</a></li>
+<li><a href="http://falsinsoft.blogspot.de/2012/11/access-gpio-from-linux-user-space.html" target="_blank">Access GPIO from Linux user space</a></li>
+</ul>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"GPIO","level":"2.5","depth":1,"next":{"title":"H5","level":"2.5.1","depth":2,"path":"orangepi/kai-shi-ru-keng/gpio/h5.md","ref":"orangepi/kai-shi-ru-keng/gpio/h5.md","articles":[{"title":"WiringOP","level":"2.5.1.1","depth":3,"path":"orangepi/kai-shi-ru-keng/gpio/h5/wiringop.md","ref":"orangepi/kai-shi-ru-keng/gpio/h5/wiringop.md","articles":[]}]},"previous":{"title":"超频（危险！！！！）","level":"2.4.14","depth":2,"path":"orangepi/kai-shi-ru-keng/chao-pin-ff08-wei-xian.md","ref":"orangepi/kai-shi-ru-keng/chao-pin-ff08-wei-xian.md","articles":[]},"dir":"ltr"},"config":{"plugins":["theme-api","disqus","github","editlink","prism","-highlight","baidu","splitter","sitemap"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"prism":{},"disqus":{"useIdentifier":false,"shortName":"osibook"},"github":{"url":"https://github.com/zoums/osibook"},"editlink":{"label":"编辑本页","multilingual":false,"base":"https://github.com/zoums/osi"},"splitter":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"sitemap":{"hostname":"https://osi.linux-sunxi.cn/"},"theme-api":{"languages":[{"lang":"js","name":"JavaScript","default":true},{"lang":"go","name":"Go"}],"split":true,"theme":"light"},"baidu":{"token":"890baac869f73b83d85d07247c357ff0"},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"OSI WiKi","language":"zh","gitbook":"*","description":"OSI WiKi"},"file":{"path":"orangepi/kai-shi-ru-keng/gpio.md","mtime":"2017-08-21T13:26:54.852Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2017-09-09T05:12:20.814Z"},"basePath":"../..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../../gitbook/gitbook.js"></script>
+    <script src="../../gitbook/theme.js"></script>
+    
+        
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/URI.js/1.16.1/URI.min.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-disqus/plugin.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-github/plugin.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-editlink/plugin.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-baidu/plugin.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-splitter/splitter.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-theme-api/theme-api.js"></script>
+        
+    
+
+    </body>
+</html>
+
